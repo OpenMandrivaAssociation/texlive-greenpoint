@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/greenpoint
+# catalog-date 2006-12-09 16:48:33 +0100
+# catalog-license gpl
+# catalog-version undef
 Name:		texlive-greenpoint
 Version:	20061209
 Release:	1
@@ -41,6 +47,7 @@ on nearly every bottle. It should not be confused with the
 %{_texmfdistdir}/fonts/tfm/public/greenpoint/greenpoint.tfm
 %doc %{_texmfdistdir}/doc/fonts/greenpoint/ChangeLog
 %doc %{_texmfdistdir}/doc/fonts/greenpoint/README
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ on nearly every bottle. It should not be confused with the
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
