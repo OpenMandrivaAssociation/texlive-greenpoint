@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 A MetaFont-implementation of the logo commonly known as 'Der
@@ -26,20 +24,12 @@ Grune Punkt' ('The Green Point'). In Austria, it can be found
 on nearly every bottle. It should not be confused with the
 'Recycle'-logo, implemented by Ian Green.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -48,7 +38,6 @@ on nearly every bottle. It should not be confused with the
 %{_texmfdistdir}/fonts/tfm/public/greenpoint/greenpoint.tfm
 %doc %{_texmfdistdir}/doc/fonts/greenpoint/ChangeLog
 %doc %{_texmfdistdir}/doc/fonts/greenpoint/README
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,5 +48,3 @@ on nearly every bottle. It should not be confused with the
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
