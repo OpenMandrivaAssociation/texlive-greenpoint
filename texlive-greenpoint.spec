@@ -48,3 +48,17 @@ on nearly every bottle. It should not be confused with the
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20061209-2
++ Revision: 752436
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20061209-1
++ Revision: 718583
+- texlive-greenpoint
+- texlive-greenpoint
+- texlive-greenpoint
+- texlive-greenpoint
+
