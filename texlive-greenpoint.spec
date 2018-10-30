@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-greenpoint
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	The Green Point logo
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/greenpoint
