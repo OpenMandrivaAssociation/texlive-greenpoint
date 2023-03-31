@@ -1,6 +1,6 @@
 Name:		texlive-greenpoint
 Version:	15878
-Release:	1
+Release:	2
 Summary:	The Green Point logo
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/greenpoint
